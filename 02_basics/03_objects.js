@@ -39,15 +39,20 @@ const objCombined = { ...obj1, ...obj2, ...obj3 };
 
 // console.log(objCombined);
 
-console.log(tinderUser);
+// console.log(tinderUser);
 
 // method to extract all the keys of an object , and it RETURNS array
-console.log(Object.keys(tinderUser));
+// console.log(Object.keys(tinderUser));
 
 // method to extract all the values of an object , and it RETURNS array
-console.log(Object.values(tinderUser));
+// console.log(Object.values(tinderUser));
 
 // rarely used method entries , creates each key: value pair as an array
-console.log(Object.entries(tinderUser));
+// console.log(Object.entries(tinderUser));
 
-console.log(tinderUser.hasOwnProperty("isLoggedIn"));
+// console.log(tinderUser.hasOwnProperty("isLoggedIn"));
+
+// we can destructer objects when handling api responses in the following way, and we can also name the destructured attribute as we want using a " : "
+const { email: anotherEmail } = anotherUser;
+
+console.log(anotherEmail);
