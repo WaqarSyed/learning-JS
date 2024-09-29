@@ -27,4 +27,33 @@ function loginUser(userName = "sam") {
 
 // we exercised that above loginUser function is printing nothing , because we haven't stored its value in any variable and console.log it
 //lets look at the syntax for printing or getting its value
-console.log(loginUser());
+// console.log(loginUser());
+
+/*
+here we have a scenario: suppose we have a function that is responsible for calculating the 
+total price incured to a user against their shopping cart items that are added to their shopping cart.
+so, there might be a single item or can be as many items as they want 
+in this case: we can use the REST operator to get optional values 
+and following is the definition of such a function
+*/
+// spread and rest operator has the same syntax
+// rest operator returns an array
+function calculateCartPrice(...num) {
+  return num.reduce((total, item) => total + item);
+}
+
+// console.log(calculateCartPrice(45, 15, 25, 35, 65));
+
+//we can also pass objects to the function
+
+const user = {
+  name: "sam",
+  age: 25,
+};
+
+function handleObj(anyObject) {
+  return `${anyObject.name} is ${anyObject.age} years old`;
+}
+console.log(handleObj(user));
+
+// ** we can pass arrays the function in the same fashion
