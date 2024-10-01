@@ -36,9 +36,17 @@ function one() {
 // * same in the  case of if statement's scope
 
 // ? can we access a function before its declaration , seems interesting lets try it
-console.log(addOne(6));
+// console.log(addOne(6));
 function addOne(num) {
   return ++num;
 }
 
 // * above method is the standard method for declaring functions, through this we can call a function before its definition
+
+// ? below is a method of declaring functions and holding them in variable , lets try this for calling before definition
+// ! it produces an error that says : cannot access addTwo before intialization
+console.log(addTwo(8));
+// * below method is also known as expression
+const addTwo = function (num) {
+  return (num += 2);
+};
