@@ -29,3 +29,15 @@
 
 //! we can declare two or more IIFEs in the same file but each IIFE call must end with a semicolon
 //! IIFE defined  using arrow function method are also known as unnamed IIFE
+
+//? Why use IIFE?
+/* FIRST REASON:: we can avoid pulluting the global scope with the use of IIFE, IIFEs help encapsulate code within 
+their scope, and avoiding unintended interactions with the global scope 
+SECOND REASON:: IIFEs create a private scope , isolating variables within the function , this 
+is useful when we want to hide the implementation details and prevent accidental overwritting of variables 
+THIRD REASON:: before ES6 introduced 'modules' , IIFEs were commonly used to simulate module behaviour by exposing 
+only the necessary functionality , while keeping internal variables private . this was useful for organizing code
+FOURTH REASON :: Avoiding name confilicts
+FIFTH REASON :: IIFEs are often used to run initialization code that needs to execute once, such as setting up event
+listeners , initializing variables or running configuration code
+SIXTH REASON :: provided block scoping before ES6's 'let' and 'const' */
