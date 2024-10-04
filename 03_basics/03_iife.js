@@ -27,7 +27,7 @@
 );
 //! we can pass arguments to arrow function IIFE , in the same way we pass to standard method
 
-//! we can declare two or more IIFEs in the same file but each IIFE call must end with a semicolon
+//! we can declare two or more IIFEs in the same file but each IIFE call must end with a semicolon, basically they need to be separated
 //! IIFE defined  using arrow function method are also known as unnamed IIFE
 
 //? Why use IIFE?
