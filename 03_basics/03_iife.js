@@ -41,3 +41,5 @@ FOURTH REASON :: Avoiding name confilicts
 FIFTH REASON :: IIFEs are often used to run initialization code that needs to execute once, such as setting up event
 listeners , initializing variables or running configuration code
 SIXTH REASON :: provided block scoping before ES6's 'let' and 'const' */
+//! key benefits
+//* Encapsulation, Avoids conflicts, Self-contained logic, Legacy block scope
