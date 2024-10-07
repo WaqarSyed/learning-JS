@@ -20,6 +20,11 @@ let result1 = addNum(val1, val2);
 //* all the variables are assigned memory location but not initialized(means that :
 //! just varibles are allocated with memory but not assigned values, and by default they all hold 'undefined')
 //* function name holds its definition
-//TODO3: Funtion Execution Phase
+//TODO3: Execution Phase
+//* varibles are assigned with the values '10, 5'
 //* when function call appears as in line 16 we are inoking the addNum function and holding its return value
-//* inside a variable
+//* inside a variable named as 'result1'
+//? what happens when a function call appears
+//! a new varibale environment + execution thread is created
+//! this environment is particularly for that function and it consists of further two sub phases
+//* Memory phase and Execution phase
