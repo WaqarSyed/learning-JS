@@ -19,9 +19,19 @@ to bottom of the Code */
 }
 console.log(`user has the power to ${power}`); */
 
-//! following example code uses "var", no error using var but its a bad practice that variables are accessible outside of their scope
-if (true) {
-  var power = "fly";
-  console.log(`user has the power to ${power}`);
+/* following example code uses "var", no error using var but its a bad practice that variables are 
+ accessible outside of their scope */
+// if (true) {
+//   var power = "fly";
+//   console.log(`user has the power to ${power}`);
+// }
+// console.log(`user has the power to ${power}`);
+//? how to check for multiple conditions
+//* we can use nested if else statements
+
+const userLoggedIn = true;
+const debitCard = true;
+if (userLoggedIn && debitCard) {
+  console.log("allow to buy course");
 }
-console.log(`user has the power to ${power}`);
+//! we have && and || operator to check conditions
