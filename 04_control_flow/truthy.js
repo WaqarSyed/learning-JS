@@ -52,3 +52,7 @@ let val1 =
     return 4;
   })();
 console.log(val1);
+//? Terniary Operator
+// condition ? true : false
+// const score = 100;
+// score >= 80 ? console.log("greater than 80") : console.log("less than 80");
