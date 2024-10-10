@@ -19,9 +19,15 @@
 //   console.log("No user found");
 // }
 //? how we can perform the same check for objects
-const users = { 1: "waqar" };
-if (Object.keys(users).length > 0) {
-  console.log("User Received");
-} else if (Object.keys(users).length === 0) {
-  console.log("No user found");
-}
+// const users = { 1: "waqar" };
+// if (Object.keys(users).length > 0) {
+//   console.log("User Received");
+// } else if (Object.keys(users).length === 0) {
+//   console.log("No user found");
+// }
+//? note the following for interviews , competitive programming that
+console.log(false == 0);
+console.log(false == "");
+
+console.log(0 == "");
+//! all of the above 3 scenarios return true
