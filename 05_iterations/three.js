@@ -19,5 +19,18 @@ map.set("FR", "France");
 map.set("IN", "India");
 map.set("IR", "Iran");
 for (const [key, value] of map) {
-  console.log(key, value);
+  console.log(key, " : ", value);
 }
+
+//? can be iterate on objects with the for of loop ? // let's see
+const gameObj = {
+  gameOne: "Pubg",
+  gameTwo: "IGI",
+  gameThree: "COD",
+};
+
+for (const [key, value] of gameObj) {
+  console.log(key, "~", value);
+}
+
+//! note that : we cannot iterate over objects using the standard method, explore the ways to iterate over objects in four.js
