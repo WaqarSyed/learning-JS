@@ -3,8 +3,8 @@
 //   console.log(item);
 // });
 // console.log(values);
-//* So, forEach returns "undefined" means that it returns nothing
-
+//! So, forEach returns "undefined" means that it returns nothing
+//* Basically , filter method checks for the condition, elements which satisfy the condition will be returned in a new array
 // const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // const newNums = myNums.filter((num) => num > 4);
 // console.log(newNums);
