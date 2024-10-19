@@ -12,8 +12,20 @@
     </style>
 </head>
 <body class="bg-black">
-    <div ><h1 id="title" class="heading">DOM Learning with Hitesh Chaudhary</h1>
-    <p>Lorem ipsum dolor sit amet.</p>
+    <div >
+        <h1 id="title" class="heading">DOM Learning with Hitesh Chaudhary</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h3>Lorem, ipsum dolor.</h3>
+        <h4>Lorem, ipsum.</h4>
+        <input type="password" name="" id="">
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
+        
     </div>
 </body>
 </html>
@@ -23,3 +35,11 @@
  eg.span element whom display is set to none 
  innerHTML: returns the complete html inserted in any specific element for example:: if a span is inserted within a 
  h1 text --> 
+
+ <!-- Difference between selectors
+  querySelector : returns the first occurence of the target element :: widely used in real world projects
+  querySelectorAll : returns a NodeList which looks like arrays but it's not actually an array :* remember it provides forEach method but not map 
+  getElementByClassName : returns an HTMLCollection which is a bit different from NodeList and does not provide forEach for looping
+  we can convert HTMLCollection to array by using the following method
+  Array.from('Name of HTMLCollection')
+  -->
