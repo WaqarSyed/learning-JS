@@ -13,7 +13,7 @@
             <li><img width="200px" height="150px" id="japan" src="https://images.unsplash.com/photo-1729591285574-f8a53407fcdd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D" alt="cloud"></li>
             <li><img width="200px" height="150px" id="river" src="https://images.unsplash.com/photo-1729508418289-75baec809821?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDV8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D" alt="mountain"></li>
             <li><img width="200px" height="150px" id="owl" src="https://images.unsplash.com/photo-1729538426710-fa698dc6aa3d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEzfDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D" alt="trees"></li>
-            <li><a style="color: aliceblue;" id="google" href="google.com">Google</a></li>
+            <li><a style="color: aliceblue;" id="google" href="https://google.com">Google</a></li>
         </ul>
     </div>
 </body>
@@ -50,10 +50,22 @@
     // document.getElementById('images').addEventListener("click", (e) => {  console.log("Clicked inside the ul") }, false)
     // now when we click on the owl the propagation will stop and we get the single message "owl clicked"
     // Now following is the example of Event Capturing or Event Trickling
-   document.getElementById('owl').addEventListener("click", (e) => {  console.log("Owl clicked") }, true)
-    document.getElementById('images').addEventListener("click", (e) => { console.log("Clicked inside the ul") }, true)
+//    document.getElementById('owl').addEventListener("click", (e) => {  console.log("Owl clicked") }, true)
+//     document.getElementById('images').addEventListener("click", (e) => { console.log("Clicked inside the ul") }, true)
     /* Note that in event Capturing event is propagated from parent to child whether we click on owl or some other 
     li we will first get the parent message which says "clicked inside the ul " and then the "owl" clicked will be 
     printed in the console*/
+    // we have another technique e.preventDefault() let's look at the following example
+    // document.getElementById('google').addEventListener("click", (e) => {console.log("google clicked");e.preventDefault(); e.stopPropagation()}, false)
+    /* Note that :: the default behaviour for an anchor tag is that whenever we click we are redirected to the link
+    but when we use the preventDefault() method on the event which is being propagated , we get the message in console but
+    not redirected to the link provided */
+
+    document.querySelector('#images').addEventListener("click", function(e) {
+        console.log(e.target.parentNode)
+        let removeIt = e.target.parentNode
+        // removeIt.remove();
+        removeIt.parentNode.removeChild(removeIt)
+    }, false)
 </script>
 </html>
