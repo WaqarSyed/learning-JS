@@ -5,7 +5,7 @@ const hint = document.querySelector(".lowOrHi");
 const startOver = document.querySelector(".resultParas");
 const userInput = document.getElementById("guessField");
 const p = document.createElement("p");
-const randomNumber = Math.round(Math.random() * 100 + 1);
+let randomNumber = Math.round(Math.random() * 100 + 1);
 console.log(randomNumber);
 let playGame = true;
 
@@ -66,6 +66,14 @@ function endGame() {
 function newGame() {
   const newBtn = document.querySelector("#newGame");
   newBtn.addEventListener("click", () => {
-    location.reload();
+    // location.reload();
+    randomNumber = Math.round(Math.random() * 100 + 1);
+    prevGuesses = [];
+    numGuesses = 10;
+    guessSlot.innerHTML = "";
+    remaining.innerHTML = `${numGuesses}`;
+    userInput.removeAttribute("disabled");
+    startOver.removeChild(p);
+    playGame = true;
   });
 }
