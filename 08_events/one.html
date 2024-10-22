@@ -29,17 +29,31 @@
     //clientX, clientY, screenX, screenY, 
     //altKey, ctrlKey, shiftKey, keyCode
 
-    document.getElementById('owl').addEventListener("click", (e) => {console.log(e)
-    }, false)
     /* third argument to the addEventListener method is the event propagation which is set to false byDefault and
-     it has 2 contexts 
-     1. Event Bubbling (Default Behavior):: 
-     In Event Bubbling , the event starts from the target element (the deepest nested element where the event was
-      triggered) and bubbles up through its ancestors, going up to the root (html)
-    2. Event Capturing (also known as Event Trickling)::
-    In Event Trickling , the event starts from the root element and travels down to the target element*/
+         it has 2 contexts 
+         1. Event Bubbling (Default Behavior):: 
+         In Event Bubbling , the event starts from the target element (the deepest nested element where the event was
+          triggered) and bubbles up through its ancestors, going up to the root (html)
+        2. Event Capturing (also known as Event Trickling)::
+        In Event Trickling , the event starts from the root element and travels down to the target element*/
 
-    
-   
+
+    // document.getElementById('owl').addEventListener("click", (e) => {console.log("Owl clicked")}, false)
+    // document.getElementById('images').addEventListener("click", (e) => {console.log("Clicked inside the ul")}, false)
+    /* Note that , we are adding an EventListener on the 'ul' element which has 5 'li' element and adding another event 
+    on li with id 'owl' . So , when we click on any of the li's other than the one with id 'owl' we get a message 
+    in console saying "clicked inside the ul" but when we click on the li with id 'owl' first we get the message "
+    owl clicked " then "clicked inside the ul ", this is called event bubbling : so the event is being propagated from 
+    target to the parent and ancestors and so on... 
+    If we need to stop that propagation we can use the stopPropagation() method*/
+    // document.getElementById('owl').addEventListener("click", (e) => { e.stopPropagation();console.log("Owl clicked") }, false)
+    // document.getElementById('images').addEventListener("click", (e) => {  console.log("Clicked inside the ul") }, false)
+    // now when we click on the owl the propagation will stop and we get the single message "owl clicked"
+    // Now following is the example of Event Capturing or Event Trickling
+   document.getElementById('owl').addEventListener("click", (e) => {  console.log("Owl clicked") }, true)
+    document.getElementById('images').addEventListener("click", (e) => { console.log("Clicked inside the ul") }, true)
+    /* Note that in event Capturing event is propagated from parent to child whether we click on owl or some other 
+    li we will first get the parent message which says "clicked inside the ul " and then the "owl" clicked will be 
+    printed in the console*/
 </script>
 </html>
