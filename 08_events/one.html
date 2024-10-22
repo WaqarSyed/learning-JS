@@ -31,7 +31,14 @@
 
     document.getElementById('owl').addEventListener("click", (e) => {console.log(e)
     }, false)
-    //third argument to the addEventListener method is the event propagation which is set to false byDefault
+    /* third argument to the addEventListener method is the event propagation which is set to false byDefault and
+     it has 2 contexts 
+     1. Event Bubbling (Default Behavior):: 
+     In Event Bubbling , the event starts from the target element (the deepest nested element where the event was
+      triggered) and bubbles up through its ancestors, going up to the root (html)
+    2. Event Capturing (also known as Event Trickling)::
+    In Event Trickling , the event starts from the root element and travels down to the target element*/
+
     
    
 </script>
