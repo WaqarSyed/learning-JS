@@ -63,9 +63,73 @@
 
     document.querySelector('#images').addEventListener("click", function(e) {
         console.log(e.target.parentNode)
+        console.log(e);
+        
         let removeIt = e.target.parentNode
         // removeIt.remove();
         removeIt.parentNode.removeChild(removeIt)
     }, false)
 </script>
 </html>
+<!--   !TOP Event Properties::
+*: type : The type of the event that was triggered (e.g. click, keydown, mousemove) 
+?: useCase : knowing which event was fired can help you handle multiple types of events with a single listener
+*: target: The element on which the event occurred.
+?: Use Case: Access the element that triggered the event, which is useful for identifying the source of the event in complex UIs.
+
+*: currentTarget: The element to which the event listener is attached.
+?: Use Case: Useful in event delegation to know the element that is handling the event, especially when target and currentTarget differ.
+*: timeStamp: Time (in milliseconds) since the document was loaded when the event was created.
+?: Use Case: Track the timing of events for performance or analytics purposes.
+*: defaultPrevented: Indicates whether event.preventDefault() was called to prevent the default action.
+?: Use Case: Ensure that default actions (like form submission or link navigation) are stopped when desired.
+*: clientX / clientY: X and Y coordinates of the event relative to the viewport (visible area of the browser).
+?: Use Case: Determine where a mouse event occurred on the screen (e.g., for custom tooltips, drag-and-drop).
+*: screenX / screenY: X and Y coordinates of the event relative to the screen.
+?: Use Case: Detect the position on the screen for multi-monitor setups or for interactions where screen coordinates matter.
+*: altKey / ctrlKey / shiftKey / metaKey: Boolean values that indicate whether the Alt, Ctrl, Shift, or Meta (Command/Windows) keys were pressed during the event.
+?: Use Case: Detect modifier keys for advanced keyboard shortcuts or mouse interactions.
+*: relatedTarget: The element that the pointer left or entered during mouseover, mouseout, focus, or blur events.
+?: Use Case: Manage interactions during focus changes or hovering transitions between elements.
+*: key / code: key provides the string of the key pressed (e.g., "a", "Enter"), while code provides the physical key code.
+?: Use Case: Handle keyboard shortcuts and key events more precisely, including differentiating between keys based on physical location.
+*: buttons (Mouse Events): Indicates which mouse buttons are pressed (left, right, middle, etc.).
+?: Use Case: Manage complex mouse interactions like drag-and-drop or multi-button mouse handling.
+*: pointerId / pointerType (Pointer Events): Identifier and type of pointer device (e.g., mouse, pen, touch).
+?: Use Case: Handle pointer-specific events for multi-input devices (touch screens, styluses, etc.).
+
+                         !Top Event Methods::
+*: preventDefault(): Prevents the browser’s default behavior for the event.
+?: Use Case: Stop default actions like form submission or link navigation and replace them with custom logic.
+*: stopPropagation(): Stops the event from propagating (bubbling) up the DOM tree.
+?: Use Case: Ensure that only the current element handles the event and no parent elements are triggered.
+*: stopImmediatePropagation(): Stops the event from propagating and prevents any remaining event listeners from being executed.
+?: Use Case: Used when you want to ensure no other event handlers on the same element or parent elements are fired.
+*: isTrusted: Boolean indicating whether the event was triggered by the user (true) or programmatically (false).
+?: Use Case: Verify that an event is user-initiated for security and UX purposes.
+*: composedPath(): Returns an array of elements on which the event is dispatched, starting from the target and ending at the root.
+?: Use Case: Trace the full propagation path of an event, especially in complex shadow DOM structures or deeply nested elements.
+*: initEvent() (Deprecated but useful for learning legacy code): Initializes a newly created event object before it's dispatched.
+?: Use Case: Customizing events in older codebases.
+*: getModifierState(): Checks the state of modifier keys (e.g., "Shift", "CapsLock") during the event.
+?: Use Case: Handle dynamic keyboard inputs, particularly useful for games, text inputs, or advanced UI controls.
+*: persist() (React-specific method): Prevents React from clearing the event object after a synthetic event.
+?: Use Case: Useful in React to hold onto event data for asynchronous functions or debugging.
+
+!Advanced Properties to Explore (For In-Depth Knowledge)::
+
+*: bubbles: Boolean indicating whether the event propagates (bubbles) up through the DOM.
+?: Use Case: You can check if an event is set to bubble, useful for conditional event handling in delegation.
+*: composed: Indicates whether the event crosses shadow DOM boundaries.
+?: Use Case: Manage event propagation in Web Components and shadow DOM.
+*: view: Refers to the window object where the event occurred (i.e., window).
+?: Use Case: Primarily used in UI events to track which window is responsible for the event.
+*: detail (UI Events): Provides additional information specific to certain events (e.g., number of clicks for a click event).
+?: Use Case: Detect double-clicks, zoom gestures, or other complex interactions.
+
+                   !Key Takeaways:
+*:  Master Event Control: preventDefault(), stopPropagation(), stopImmediatePropagation() are essential to mastering event flow and preventing unwanted actions.
+*:  Handle Modifiers: Understanding modifier keys (altKey, ctrlKey, etc.) can make your app more responsive to power users who rely on keyboard shortcuts.
+*:  Multi-Device Handling: Properties like pointerId and pointerType make you capable of handling events across different input types (touch, pen, mouse).
+*:  Know Your Event Path: target, currentTarget, composedPath() allow precise control over event delegation and bubbling in complex UIs.
+-->
