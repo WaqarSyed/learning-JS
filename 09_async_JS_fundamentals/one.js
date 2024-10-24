@@ -54,3 +54,5 @@ console.log('This will execute immediately, without waiting for file to be read'
 ! operations that depend on each other (this can lead to issues like "callback hell"). This is mitigated by modern 
 ! async techniques such as promises and async/await.
 */
+//* Js engine is made up from memory heap & call stack
+//! study the event loop, task queue and High priority Queue in detail
