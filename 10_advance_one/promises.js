@@ -36,9 +36,9 @@ promiseThree.then((user) => {
   console.log(`Name : ${user.name} Email: ${user.email} `);
 }); */
 
-const promiseFour = new Promise((resolve, reject) => {
+/* const promiseFour = new Promise((resolve, reject) => {
   setTimeout(() => {
-    let error = false;
+    let error = true;
     if (!error) {
       resolve({ username: "Codes110", password: "12345" });
     } else {
@@ -59,4 +59,27 @@ promiseFour
   })
   .finally(() => {
     console.log("Promise four either resolved or rejected");
-  });
+  }); */
+//! Now , following is a new approach to consume Promises , mostly useful in making DB connections,
+//!So when no DB connection is established we don't want to move forward in this case
+//* We are using Async/Await to consume that promise
+
+const promiseFive = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    let error = false;
+    if (!error) {
+      resolve({ username: "Javascript", password: "freecodecamp" });
+    } else {
+      reject("Error : Js went wrong");
+    }
+  }, 1000);
+});
+async function consumePromiseFive() {
+  try {
+    const response = await promiseFive;
+    console.log(response);
+  } catch (error) {
+    console.log(error);
+  }
+}
+consumePromiseFive();
