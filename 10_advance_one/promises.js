@@ -64,9 +64,9 @@ promiseFour
 //!So when no DB connection is established we don't want to move forward in this case
 //* We are using Async/Await to consume that promise
 
-const promiseFive = new Promise((resolve, reject) => {
+/* const promiseFive = new Promise((resolve, reject) => {
   setTimeout(() => {
-    let error = false;
+    let error = true;
     if (!error) {
       resolve({ username: "Javascript", password: "freecodecamp" });
     } else {
@@ -82,4 +82,29 @@ async function consumePromiseFive() {
     console.log(error);
   }
 }
-consumePromiseFive();
+consumePromiseFive(); */
+
+/* async function getAllUsers() {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    // console.log(response);
+    const data = response.json();
+    console.log(data);
+  } catch (error) {
+    console.log("ERROR:  ", error);
+  }
+}
+getAllUsers();
+ */
+
+fetch("https://api.github.com/users/waqarSyed")
+  .then((response) => {
+    console.log(response);
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
