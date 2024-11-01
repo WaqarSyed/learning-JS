@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: black">
+    <button id="orange">Orange</button><button id="green">Green</button>
+  </body>
+  <script>
+    // we already know that , when we declare some variables in a function and try to access them outside of that function , they are not available because its a scope issue : their scope is bound to the function body
+    // function init() {
+    //   let name = "Mozilla";
+    //   function displayName() {
+    //     console.log(name);
+    //   }
+    //   displayName();
+    // }
+    // init();
+    // function greet() {
+    //   var username = "waqar";
+    //   console.log("inner print ", username);
+    // }
+    // greet();
+    // console.log("outer print", username);
+    // from the above code example , we can understand that : inner functions have access to the variables of outer functions and this is called "Lexical Scoping"
+  </script>
+  <script>
+    // NOTE :: we were logging name in the above script but now we are returning the refference of inner function"displayName()"
+    /* WHAT happens in this case because function execution context remains as long as the function is being executed
+    and variables too remain till the execution . but how the lexical scoping is supposed to work in such a situation 
+    because inner function is using the parent function variable and if the above statement is true then there would be no variable 
+    to be accessed . To solve this issue we have a concept in JS which is called closure :: so when we return the inner function and create the 
+    myFunc constant from the makeFunc function then it's returned value as well as the lexical scope is preserved in myFunc  becuase here comes 
+    memory into action */
+    // function makeFunc() {
+    //   const name = "Mozilla";
+    //   function displayName() {
+    //     console.log(name);
+    //   }
+    //   return displayName;
+    // }
+
+    // const myFunc = makeFunc();
+    // myFunc();
+  </script>
+  <script>
+    // document.getElementById("orange").onclick = function () {
+    //   document.body.style.backgroundColor = "orange";
+    // };
+    // SCENARIO: if we have huge amount of buttons to perform the colorChange functionality , how we can use the closure to tackle that situation
+    function clickHandler(color) {
+      return function () {
+        document.body.style.backgroundColor = `${color}`;
+      };
+    }
+
+    document.getElementById("orange").onclick = clickHandler("orange");
+    document.getElementById("green").onclick = clickHandler("green");
+  </script>
+</html>
