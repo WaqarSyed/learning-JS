@@ -2,20 +2,29 @@
 //! remember that we can get and set the getter , setter functions just because of "class" keyword
 //* following is the old implementation to get and set values
 //! this is how basically the getter/setter functions are designed from line : 9 to 16
-function User(email, passowrd) {
-  this.email = email;
-  this.passowrd = passowrd;
+function User(email, password) {
+  this._email = email;
+  this._password = password;
 
-  Object.defineProperty(this, "passowrd", {
+  Object.defineProperty(this, "password", {
     set: function (value) {
-      this.passowrd = value;
+      this._password = value;
     },
     get: function () {
-      return this.passowrd.toUpperCase();
+      return this._password.toUpperCase();
+    },
+  });
+  Object.defineProperty(this, "email", {
+    set: function (value) {
+      this._email = value;
+    },
+    get: function () {
+      return this._email.toUpperCase();
     },
   });
 }
 
-const newUser = new User("ali@a.com", "asdf");
+let waqar = new User("ali@a.com", "asdf");
 
-console.log(newUser);
+console.log(waqar);
+console.log(waqar.password);
